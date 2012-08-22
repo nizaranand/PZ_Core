@@ -169,6 +169,7 @@ $friend = get_user_by_username((string)get_input('friend'));
  *
  * @return $string
  */
+
 function thewire_notify_message($hook, $entity_type, $returnvalue, $params) {
 	global $CONFIG;
 	
@@ -176,12 +177,12 @@ function thewire_notify_message($hook, $entity_type, $returnvalue, $params) {
 	if (($entity instanceof ElggEntity) && ($entity->getSubtype() == 'thewire')) {
 		$descr = $entity->description;
 		$owner = $entity->getOwnerEntity();
-		if ($entity->reply) {
+		if ($entity->reply && $parent_post) {
 			// have to do this because of poor design of Elgg notification system
 			$parent_post = get_entity(get_input('parent_guid'));
-			
-			if ($parent_post) 
-				$parent_owner = $parent_post->getOwnerEntity();
+			$parent_owner = $parent_post->getOwnerEntity();
+			  $true_access = $parent_owner->access_id;
+			if ($true_access && $parent_post) 
 			
 			$body = sprintf(elgg_echo('thewire:notify:reply'), $owner->name, $parent_owner->name);
 		} else 
@@ -262,7 +263,7 @@ function thewire_save_post($text, $userid, $access_id, $parent_guid = 0, $method
 	$post->subtype = "thewire";
 	$post->owner_guid = $userid;
 	$post->access_id = $access_id;
-
+    
 	// only 1000 characters allowed
 	$text = elgg_substr($text, 0, 1000);
 
@@ -278,7 +279,11 @@ function thewire_save_post($text, $userid, $access_id, $parent_guid = 0, $method
 
 	// must do this before saving so notifications pick up that this is a reply
 	if ($parent_guid) {
-		$post->reply = true;
+			$post->reply = true;
+	$parent_post = get_entity(get_input('parent_guid'));
+			$parent_owner = $parent_post->getOwnerEntity();
+			$true_access = $parent_owner;
+			$post->access_id = $true_access;
 	}
 
 	$guid = $post->save();
