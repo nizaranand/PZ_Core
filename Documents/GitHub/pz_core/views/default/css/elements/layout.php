@@ -62,10 +62,10 @@
 	margin: 0;
 }
 
-/***** PAGE HEADER this should change header color ******/
+/***** PAGE HEADER ******/
 .elgg-page-header {
 	position: relative;
-	background: #e6f3ff url(<?php echo elgg_get_site_url(); ?>_graphics/header_shadow.png) repeat-x bottom left;
+	background: #4690D6 url(<?php echo elgg_get_site_url(); ?>_graphics/header_shadow.png) repeat-x bottom left;
 }
 .elgg-page-header > .elgg-inner {
 	position: relative;

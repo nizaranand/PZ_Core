@@ -32,7 +32,7 @@
 }
 .elgg-pagination a:hover {
 	background: #4690d6;
-	color:#a8ffcd;
+	color: white;
 	text-decoration: none;
 }
 .elgg-pagination .elgg-state-disabled span {
@@ -49,7 +49,7 @@
 *************************************** */
 .elgg-tabs {
 	margin-bottom: 5px;
-	border-bottom: 2px solid #8dc6ff;
+	border-bottom: 2px solid #cccccc;
 	display: table;
 	width: 100%;
 }
@@ -70,11 +70,11 @@
 	padding: 3px 10px 0 10px;
 	text-align: center;
 	height: 21px;
-	color: #4978ff;
+	color: #999;
 }
 .elgg-tabs a:hover {
 	background: #dedede;
-	color: #4978ff;
+	color: #4690D6;
 }
 .elgg-tabs .elgg-state-selected {
 	border-color: #ccc;
@@ -131,7 +131,7 @@
 
 .elgg-menu-topbar > li > a {
 	padding-top: 2px;
-	color: #56ffcd;
+	color: #eee;
 	margin: 1px 15px 0;
 }
 
@@ -191,7 +191,7 @@
 }
 
 .elgg-menu-site-default > li > a {
-	color: #4978ff; <!-- this changes the nav topbar text color --->
+	color: white;
 }
 
 .elgg-menu-site > li > ul {
@@ -206,7 +206,7 @@
 .elgg-menu-site-default > .elgg-state-selected > a,
 .elgg-menu-site-default > li:hover > a {
 	background: white;
-	color: #4978ff; <!-- this changes the nav topbar text color --->
+	color: #555;
 
 	-webkit-box-shadow: 2px -1px 1px rgba(0, 0, 0, 0.25);
 	-moz-box-shadow: 2px -1px 1px rgba(0, 0, 0, 0.25);
@@ -248,7 +248,7 @@
 }
 
 .elgg-menu-site-more > li > a:hover {
-	background: #f8ffff; <!-- this changes the big top background area-->
+	background: #4690D6;
 	color: white;
 }
 
@@ -346,7 +346,7 @@
 	text-decoration: none;
 }
 .elgg-menu-page li.elgg-state-selected > a {
-	background-color: #f8ffff; <!-- color background --->
+	background-color: #4690D6;
 	color: white;
 }
 .elgg-menu-page .elgg-child-menu {

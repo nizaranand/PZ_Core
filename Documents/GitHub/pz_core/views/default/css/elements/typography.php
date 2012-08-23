@@ -17,12 +17,12 @@ body {
 }
 
 a {
-	color: #56d9ff;
+	color: #4690D6;
 }
 
 a:hover,
 a.selected { <?php //@todo remove .selected ?>
-	color: #56d9ff;
+	color: #555555;
 	text-decoration: underline;
 }
 
@@ -90,7 +90,7 @@ h6 { font-size: 0.8em; }
 .elgg-heading-site, .elgg-heading-site:hover {
 	font-size: 2em;
 	line-height: 1.4em;
-	color:#56d9ff;
+	color: white;
 	font-style: italic;
 	font-family: Georgia, times, serif;
 	text-shadow: 1px 2px 4px #333333;
