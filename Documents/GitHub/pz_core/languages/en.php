@@ -37,6 +37,7 @@ $english = array(
  * Errors
  */
 	'exception:title' => "Fatal Error.",
+	'exception:contact_admin' => 'An unrecoverable error has occurred and has been logged. Contact the site administrator with the following information:',
 
 	'actionundefined' => "The requested action (%s) was not defined in the system.",
 	'actionnotfound' => "The action file for %s was not found.",
@@ -55,6 +56,7 @@ $english = array(
 	'DatabaseException:DBSetupIssues' => "There were a number of issues: ",
 	'DatabaseException:ScriptNotFound' => "Elgg couldn't find the requested database script at %s.",
 	'DatabaseException:InvalidQuery' => "Invalid query",
+	'DatabaseException:InvalidDBLink' => "Connection to database was lost.",
 
 	'IOException:FailedToLoadGUID' => "Failed to load new %s from GUID:%d",
 	'InvalidParameterException:NonElggObject' => "Passing a non-ElggObject to an ElggObject constructor!",
@@ -74,10 +76,10 @@ $english = array(
 	'ElggPlugin:MissingID' => 'Missing plugin ID (guid %s)',
 	'ElggPlugin:NoPluginPackagePackage' => 'Missing ElggPluginPackage for plugin ID %s (guid %s)',
 
-	'ElggPluginPackage:InvalidPlugin:MissingFile' => 'Missing file %s in package',
-	'ElggPluginPackage:InvalidPlugin:InvalidDependency' => 'Invalid dependency type "%s"',
-	'ElggPluginPackage:InvalidPlugin:InvalidProvides' => 'Invalid provides type "%s"',
-	'ElggPluginPackage:InvalidPlugin:CircularDep' => 'Invalid %s dependency "%s" in plugin %s.  Plugins cannot conflict with or require something they provide!',
+	'ElggPluginPackage:InvalidPlugin:MissingFile' => 'The required file "%s" is missing.',
+	'ElggPluginPackage:InvalidPlugin:InvalidDependency' => 'Its manifest contains an invalid dependency type "%s".',
+	'ElggPluginPackage:InvalidPlugin:InvalidProvides' => 'Its manifest contains an invalid provides type "%s".',
+	'ElggPluginPackage:InvalidPlugin:CircularDep' => 'There is an invalid %s dependency "%s" in plugin %s.  Plugins cannot conflict with or require something they provide!',
 
 	'ElggPlugin:Exception:CannotIncludeFile' => 'Cannot include %s for plugin %s (guid: %s) at %s.',
 	'ElggPlugin:Exception:CannotRegisterViews' => 'Cannot open views dir for plugin %s (guid: %s) at %s.',
@@ -228,17 +230,13 @@ $english = array(
 	'LoginException:AccountLocked' => 'Your account has been locked for too many log in failures.',
 	'LoginException:ChangePasswordFailure' => 'Failed current password check.',
 
-	'memcache:notinstalled' => 'PHP memcache module not installed, you must install php5-memcache',
-	'memcache:noservers' => 'No memcache servers defined, please populate the $CONFIG->memcache_servers variable',
-	'memcache:versiontoolow' => 'Memcache needs at least version %s to run, you are running %s',
-	'memcache:noaddserver' => 'Multiple server support disabled, you may need to upgrade your PECL memcache library',
-
 	'deprecatedfunction' => 'Warning: This code uses the deprecated function \'%s\' and is not compatible with this version of Elgg',
 
 	'pageownerunavailable' => 'Warning: The page owner %d is not accessible!',
 	'viewfailure' => 'There was an internal failure in the view %s',
 	'changebookmark' => 'Please change your bookmark for this page',
-	'noaccess' => 'This content has been removed, is invalid, or you do not have permission to view it.',
+	'noaccess' => 'You need to login to view this content or the content has been removed or you do not have permission to view it.',
+	'error:missing_data' => 'There was some data missing in your request',
 
 	'error:default' => 'Oops...something went wrong.',
 	'error:404' => 'Sorry. We could not find the page that you requested.',
@@ -253,7 +251,7 @@ $english = array(
  * User details
  */
 
-	'name' => "Real Name",
+	'name' => "Display name",
 	'email' => "Email address",
 	'username' => "Username",
 	'loginusername' => "Username or email",
@@ -278,7 +276,7 @@ $english = array(
  */
 
 	'dashboard' => "Dashboard",
-	'dashboard:nowidgets' => "This is the only place on the site that you need to be to see everything that is important.",
+	'dashboard:nowidgets' => "Your dashboard lets you track the activity and content on this site that matters to you.",
 
 	'widgets:add' => 'Add widgets',
 	'widgets:add:description' => "Click on any widget button below to add it to the page.",
@@ -293,7 +291,7 @@ $english = array(
 	'widget' => "Widget",
 	'item:object:widget' => "Widgets",
 	'widgets:save:success' => "The widget was successfully saved.",
-	'widgets:save:failure' => "We could not save your widget. Please try again.",
+	'widgets:save:failure' => "We could not save your widget.",
 	'widgets:add:success' => "The widget was successfully added.",
 	'widgets:add:failure' => "We could not add your widget.",
 	'widgets:move:failure' => "We could not store the new widget position.",
@@ -317,65 +315,65 @@ $english = array(
  * Friends
  */
 
-	'friends' => "Pals",
-	'friends:yours' => "Your pals",
-	'friends:owned' => "%s's pals",
-	'friend:add' => "Add pal",
-	'friend:remove' => "Remove pal",
+	'friends' => "Friends",
+	'friends:yours' => "Your friends",
+	'friends:owned' => "%s's friends",
+	'friend:add' => "Add friend",
+	'friend:remove' => "Remove friend",
 
-	'friends:add:successful' => "You have successfully added %s as a pal.",
-	'friends:add:failure' => "We couldn't add %s as a pal. Please try again.",
+	'friends:add:successful' => "You have successfully added %s as a friend.",
+	'friends:add:failure' => "We couldn't add %s as a friend.",
 
-	'friends:remove:successful' => "You have successfully removed %s from your pals.",
-	'friends:remove:failure' => "We couldn't remove %s from your pals. Please try again.",
+	'friends:remove:successful' => "You have successfully removed %s from your friends.",
+	'friends:remove:failure' => "We couldn't remove %s from your friends.",
 
-	'friends:none' => "This user hasn't added anyone as a pal yet.",
-	'friends:none:you' => "You don't have any pals yet.",
+	'friends:none' => "No friends yet.",
+	'friends:none:you' => "You don't have any friends yet.",
 
-	'friends:none:found' => "No pals were found. Check your",
+	'friends:none:found' => "No friends were found.",
 
-	'friends:of:none' => "Nobody has added this user as a pal yet.",
-	'friends:of:none:you' => "Nobody has added you as a pal yet. Start adding content and fill in your profile to let people find you!",
+	'friends:of:none' => "Nobody has added this user as a friend yet.",
+	'friends:of:none:you' => "Nobody has added you as a friend yet. Start adding content and fill in your profile to let people find you!",
 
-	'friends:of:owned' => "People who have made %s a pal",
+	'friends:of:owned' => "People who have made %s a friend",
 
-	'friends:of' => "Pals of",
-	'friends:collections' => "New clique of Pals",
-	'collections:add' => " New clique",
-	'friends:collections:add' => "Add pals to clique",
-	'friends:addfriends' => "Select pals",
-	'friends:collectionname' => "Clique name",
-	'friends:collectionfriends' => "Pals in clique",
-	'friends:collectionedit' => "Edit this clique",
-	'friends:nocollections' => "You haven't made any cliques yet.",
-	'friends:collectiondeleted' => "Your clique has been deleted.",
-	'friends:collectiondeletefailed' => "We were unable to delete the clique. Either you don't have permission to delete this clique, or a problem has occurred.",
-	'friends:collectionadded' => "Your clique was successfully created",
-	'friends:nocollectionname' => "You need to give your clique  a name before it can be created.",
-	'friends:collections:members' => "Clique members",
-	'friends:collections:edit' => "Edit clique",
-	'friends:collections:edited' => "Save clique",
-	'friends:collection:edit_failed' => 'Could not save clique.',
+	'friends:of' => "Friends of",
+	'friends:collections' => "Friend collections",
+	'collections:add' => "New collection",
+	'friends:collections:add' => "New friends collection",
+	'friends:addfriends' => "Select friends",
+	'friends:collectionname' => "Collection name",
+	'friends:collectionfriends' => "Friends in collection",
+	'friends:collectionedit' => "Edit this collection",
+	'friends:nocollections' => "You do not have any collections yet.",
+	'friends:collectiondeleted' => "Your collection has been deleted.",
+	'friends:collectiondeletefailed' => "We were unable to delete the collection. Either you don't have permission, or some other problem has occurred.",
+	'friends:collectionadded' => "Your collection was successfully created",
+	'friends:nocollectionname' => "You need to give your collection a name before it can be created.",
+	'friends:collections:members' => "Collection members",
+	'friends:collections:edit' => "Edit collection",
+	'friends:collections:edited' => "Saved collection",
+	'friends:collection:edit_failed' => 'Could not save collection.',
 
 	'friendspicker:chararray' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-	'avatar:edit' => 'edit your picture',
-	'Photo' => 'Photo',
-	'Photo:create' => 'Upload your site photo ',
-	'Photo:edit' => 'Edit photo',
-	'Photo:preview' => 'Preview',
-	'Photo:upload' => 'Upload a new photo',
-	'Photo:current' => 'Current photo',
-	'Photo:revert' => 'Remove your photo and use the default alien icon.',
-	'Photo:crop:title' => 'Photo cropping tool',
-	'Photo:upload:instructions' => "Your photo is displayed throughout the site. You can change it as often as you'd like. The photo you upload has to be a .gif, .jpg, or .png.  For example myphoto.gif would upload to the site, while myphoto.tiff would not.",
-	'Photo:create:instructions' => 'Click and drag a square below to match how you want your photo cropped. A preview will appear in the box on the right. When you are happy with the preview, click \'Create your photo\'. This cropped version will be used throughout the site as your photo.',
-	'Photo:upload:success' => 'Photo successfully uploaded',
-	'Photo:upload:fail' => 'Photo upload failed',
-	'Photo:resize:fail' => 'Resize of the Photo failed',
-	'Photo:crop:success' => 'Cropping the Photo succeeded',
-	'Photo:crop:fail' => 'Photo cropping failed',
-	'Photo:revert:success' => 'Reverting the Photo succeeded',
-	'Photo:revert:fail' => 'Photo revert failed',
+
+	'avatar' => 'Avatar',
+	'avatar:create' => 'Create your avatar',
+	'avatar:edit' => 'Edit avatar',
+	'avatar:preview' => 'Preview',
+	'avatar:upload' => 'Upload a new avatar',
+	'avatar:current' => 'Current avatar',
+	'avatar:remove' => 'Remove your avatar and set the default icon',
+	'avatar:crop:title' => 'Avatar cropping tool',
+	'avatar:upload:instructions' => "Your avatar is displayed throughout the site. You can change it as often as you'd like. (File formats accepted: GIF, JPG or PNG)",
+	'avatar:create:instructions' => 'Click and drag a square below to match how you want your avatar cropped. A preview will appear in the box on the right. When you are happy with the preview, click \'Create your avatar\'. This cropped version will be used throughout the site as your avatar.',
+	'avatar:upload:success' => 'Avatar successfully uploaded',
+	'avatar:upload:fail' => 'Avatar upload failed',
+	'avatar:resize:fail' => 'Resize of the avatar failed',
+	'avatar:crop:success' => 'Cropping the avatar succeeded',
+	'avatar:crop:fail' => 'Avatar cropping failed',
+	'avatar:remove:success' => 'Removing the avatar succeeded',
+	'avatar:remove:fail' => 'Avatar remove failed',
 
 	'profile:edit' => 'Edit profile',
 	'profile:aboutme' => "About me",
@@ -396,7 +394,7 @@ $english = array(
 	'profile:field:tags' => 'Tags',
 	'profile:field:url' => 'Web address',
 	'profile:field:email' => 'Email address',
-	'profile:field:location' => 'What town do you live in?',
+	'profile:field:location' => 'Location',
 	'profile:field:date' => 'Date',
 
 	'admin:appearance:profile_fields' => 'Edit Profile Fields',
@@ -410,6 +408,8 @@ $english = array(
 	'profile:explainchangefields' => "You can replace the existing profile fields with your own using the form below. \n\n Give the new profile field a label, for example, 'Favorite team', then select the field type (eg. text, url, tags), and click the 'Add' button. To re-order the fields drag on the handle next to the field label. To edit a field label - click on the label's text to make it editable. \n\n At any time you can revert back to the default profile set up, but you will lose any information already entered into custom fields on profile pages.",
 	'profile:editdefault:success' => 'New profile field added',
 	'profile:editdefault:fail' => 'Default profile could not be saved',
+	'profile:field_too_long' => 'Cannot save your profile information because the "%s" section is too long.',
+	'profile:noaccess' => "You do not have permission to edit this profile.",
 
 
 /**
@@ -427,8 +427,8 @@ $english = array(
  * River
  */
 	'river' => "River",
-	'river:friend:user:default' => "%s is now a pal with %s",
-	'river:update:user:Photo' => '%s has a new Photo',
+	'river:friend:user:default' => "%s is now a friend with %s",
+	'river:update:user:avatar' => '%s has a new avatar',
 	'river:update:user:profile' => '%s has updated their profile',
 	'river:noaccess' => 'You do not have permission to view this item.',
 	'river:posted:generic' => '%s posted',
@@ -437,6 +437,8 @@ $english = array(
 	'river:ingroup' => 'in the group %s',
 	'river:none' => 'No activity',
 	'river:update' => 'Update for %s',
+	'river:delete:success' => 'River item has been deleted',
+	'river:delete:fail' => 'River item could not be deleted',
 
 	'river:widget:title' => "Activity",
 	'river:widget:description' => "Display latest activity",
@@ -448,7 +450,7 @@ $english = array(
  * Notifications
  */
 	'notifications:usersettings' => "Notification settings",
-	'notifications:methods' => "Please specify which methods you want to permit.",
+	'notifications:methods' => "Select your notification methods.",
 	'notification:method:email' => 'Email',
 
 	'notifications:usersettings:save:ok' => "Your notification settings were successfully saved.",
@@ -481,7 +483,7 @@ $english = array(
 	'group:search:startblurb' => "Groups matching '%s':",
 	'group:search:finishblurb' => "To view more, click here.",
 	'search:go' => 'Go',
-	'userpicker:only_friends' => 'Only pals',
+	'userpicker:only_friends' => 'Only friends',
 
 /**
  * Account
@@ -501,6 +503,7 @@ $english = array(
 	'registration:notemail' => 'The email address you provided does not appear to be a valid email address.',
 	'registration:userexists' => 'That username already exists',
 	'registration:usernametooshort' => 'Your username must be a minimum of %u characters long.',
+	'registration:usernametoolong' => 'Your username is too long. It can have a maximum of %u characters.',
 	'registration:passwordtooshort' => 'The password must be a minimum of %u characters long.',
 	'registration:dupeemail' => 'This email address has already been registered.',
 	'registration:invalidchars' => 'Sorry, your username contains the character %s which is invalid. The following characters are invalid: %s',
@@ -513,7 +516,7 @@ $english = array(
 	'adduser:bad' => "The new user could not be created.",
 
 	'user:set:name' => "Account name settings",
-	'user:name:label' => "My Real Name",
+	'user:name:label' => "My display name",
 	'user:name:success' => "Successfully changed your name on the system.",
 	'user:name:fail' => "Could not change your name on the system.  Please make sure your name isn't too long and try again.",
 
@@ -560,6 +563,7 @@ $english = array(
 
 	'admin:configuration:success' => "Your settings have been saved.",
 	'admin:configuration:fail' => "Your settings could not be saved.",
+	'admin:configuration:dataroot:relative_path' => 'Cannot set "%s" as the dataroot because it is not an absolute path.',
 
 	'admin:unknown_section' => 'Invalid Admin Section.',
 
@@ -664,6 +668,7 @@ $english = array(
 /**
  * Plugins
  */
+	'plugins:disabled' => 'Plugins are not being loaded because a file named "disabled" is in the mod directory.',
 	'plugins:settings:save:ok' => "Settings for the %s plugin were saved successfully.",
 	'plugins:settings:save:fail' => "There was a problem saving settings for the %s plugin.",
 	'plugins:usersettings:save:ok' => "User settings for the %s plugin were saved successfully.",
@@ -690,7 +695,8 @@ $english = array(
 
 	'admin:plugins:warning:elgg_version_unknown' => 'This plugin uses a legacy manifest file and does not specify a compatible Elgg version. It probably will not work!',
 	'admin:plugins:warning:unmet_dependencies' => 'This plugin has unmet dependencies and cannot be activated. Check dependencies under more info.',
-	'admin:plugins:warning:invalid' => '%s is not a valid Elgg plugin.  Check <a href="http://docs.elgg.org/Invalid_Plugin">the Elgg documentation</a> for troubleshooting tips.',
+	'admin:plugins:warning:invalid' => 'This plugin is invalid: %s',
+	'admin:plugins:warning:invalid:check_docs' => 'Check <a href="http://docs.elgg.org/Invalid_Plugin">the Elgg documentation</a> for troubleshooting tips.',
 	'admin:plugins:cannot_activate' => 'cannot activate',
 
 	'admin:plugins:set_priority:yes' => "Reordered %s.",
@@ -737,6 +743,9 @@ $english = array(
 	'admin:server:label:mem_avail' => 'Memory available',
 	'admin:server:label:mem_used' => 'Memory used',
 	'admin:server:error_log' => "Web server's error log",
+	'admin:server:label:post_max_size' => 'POST maximum size',
+	'admin:server:label:upload_max_filesize' => 'Upload maximum size',
+	'admin:server:warning:post_max_too_small' => '(Note: post_max_size must be larger than this value to support uploads of this size)',
 
 	'admin:user:label:search' => "Find users:",
 	'admin:user:label:searchbutton' => "Search",
@@ -804,13 +813,13 @@ $english = array(
  */
 	'river:all' => 'All Site Activity',
 	'river:mine' => 'My Activity',
-	'river:friends' => 'Pals Activty',
+	'river:friends' => 'Friends Activity',
 	'river:select' => 'Show %s',
 	'river:comments:more' => '+%u more',
 	'river:generic_comment' => 'commented on %s %s',
 
-	'friends:widget:description' => "Displays some of your pals.",
-	'friends:num_display' => "Number of pals to display",
+	'friends:widget:description' => "Displays some of your friends.",
+	'friends:num_display' => "Number of friends to display",
 	'friends:icon_size' => "Icon size",
 	'friends:tiny' => "tiny",
 	'friends:small' => "small",
@@ -857,6 +866,7 @@ $english = array(
 	'new' => 'New',
 	'add' => 'Add',
 	'create' => 'Create',
+	'remove' => 'Remove',
 	'revert' => 'Revert',
 
 	'site' => 'Site',
@@ -867,6 +877,7 @@ $english = array(
 	'down' => 'Down',
 	'top' => 'Top',
 	'bottom' => 'Bottom',
+	'back' => 'Back',
 
 	'invite' => "Invite",
 
@@ -930,6 +941,7 @@ $english = array(
  */
 
 	'deleteconfirm' => "Are you sure you want to delete this item?",
+	'deleteconfirm:plural' => "Are you sure you want to delete these items?",
 	'fileexists' => "A file has already been uploaded. To replace it, select it below:",
 
 /**
@@ -1031,12 +1043,12 @@ Once you have logged in, we highly recommend that you change your password.
 	'installation:simplecache:description' => "The simple cache increases performance by caching static content including some CSS and JavaScript files. Normally you will want this on.",
 	'installation:simplecache:label' => "Use simple cache (recommended)",
 
-	'installation:viewpathcache:description' => "The view filepath cache decreases the loading times of plugins by caching the location of their views.",
-	'installation:viewpathcache:label' => "Use view filepath cache (recommended)",
+	'installation:systemcache:description' => "The system cache decreases the loading time of the Elgg engine by caching data to files.",
+	'installation:systemcache:label' => "Use system cache (recommended)",
 
 	'upgrading' => 'Upgrading...',
 	'upgrade:db' => 'Your database was upgraded.',
-	'upgrade:core' => 'Your elgg installation was upgraded.',
+	'upgrade:core' => 'Your Elgg installation was upgraded.',
 	'upgrade:unable_to_upgrade' => 'Unable to upgrade.',
 	'upgrade:unable_to_upgrade_info' =>
 		'This installation cannot be upgraded because legacy views
@@ -1067,11 +1079,11 @@ Once you have logged in, we highly recommend that you change your password.
 	'email:settings' => "Email settings",
 	'email:address:label' => "Your email address",
 
-	'email:save:success' => "New email address saved. Verification is requested.",
+	'email:save:success' => "New email address saved.",
 	'email:save:fail' => "Your new email address could not be saved.",
 
-	'friend:newfriend:subject' => "%s has made you a pal!",
-	'friend:newfriend:body' => "%s has made you a pal!
+	'friend:newfriend:subject' => "%s has made you a friend!",
+	'friend:newfriend:body' => "%s has made you a friend!
 
 To view their profile, click here:
 
@@ -1128,7 +1140,7 @@ If you requested this, click on the link below. Otherwise ignore this email.
 	'generic_comment:blank' => "Sorry, you need to actually put something in your comment before we can save it.",
 	'generic_comment:notfound' => "Sorry, we could not find the specified item.",
 	'generic_comment:notdeleted' => "Sorry, we could not delete this comment.",
-	'generic_comment:failure' => "An unexpected error occurred when adding your comment. Please try again.",
+	'generic_comment:failure' => "An unexpected error occurred when adding your comment.",
 	'generic_comment:none' => 'No comments',
 	'generic_comment:title' => 'Comment by %s',
 
@@ -1164,9 +1176,10 @@ You cannot reply to this email.",
  * Action gatekeeper
  */
 	'actiongatekeeper:missingfields' => 'Form is missing __token or __ts fields',
-	'actiongatekeeper:tokeninvalid' => "We encountered an error (token mismatch). This probably means that the page you were using expired. Please try again.",
+	'actiongatekeeper:tokeninvalid' => "We encountered an error (token mismatch). This probably means that the page you were using expired.",
 	'actiongatekeeper:timeerror' => 'The page you were using has expired. Please refresh and try again.',
 	'actiongatekeeper:pluginprevents' => 'A extension has prevented this form from being submitted.',
+	'actiongatekeeper:uploadexceeded' => 'The size of file(s) uploaded exceeded the limit set by your site administrator',
 
 
 /**
