@@ -7,7 +7,7 @@
  */
 
 $entity_guid = (int) get_input('entity_guid');
-$comment_text = get_input('generic_comment');
+$comment_text = (string) get_input('generic_comment');
 
 if (empty($comment_text)) {
 	register_error(elgg_echo("generic_comment:blank"));

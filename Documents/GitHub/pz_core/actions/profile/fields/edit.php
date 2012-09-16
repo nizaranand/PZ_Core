@@ -3,8 +3,8 @@
  * Edit a custom profile field
  */
 
-$id = get_input('id');
-$label = get_input('label');
+$id = (int) get_input('id');
+$label = (string) get_input('label');
 
 if (!elgg_get_config("admin_defined_profile_$id")) {
 	register_error(elgg_echo('profile:editdefault:fail'));

@@ -1,10 +1,10 @@
 <?php
 /**
  * Avatar crop action
- *
+ * updated 
  */
 
-$guid = get_input('guid');
+$guid = (int) get_input('guid');
 $owner = get_entity($guid);
 
 if (!$owner || !($owner instanceof ElggUser) || !$owner->canEdit()) {
@@ -21,6 +21,12 @@ $filehandler = new ElggFile();
 $filehandler->owner_guid = $owner->getGUID();
 $filehandler->setFilename("profile/" . $owner->guid . "master" . ".jpg");
 $filename = $filehandler->getFilenameOnFilestore();
+
+// ensuring the avatar image exists in the first place
+if (!file_exists($filename)) {
+	register_error(elgg_echo('avatar:crop:fail'));
+	forward(REFERER);
+}
 
 $icon_sizes = elgg_get_config('icon_sizes');
 unset($icon_sizes['master']);
@@ -46,7 +52,7 @@ foreach ($icon_sizes as $name => $size_info) {
 			$file->delete();
 		}
 
-		system_message(elgg_echo('avatar:resize:fail'));
+		register_error(elgg_echo('avatar:resize:fail'));
 		forward(REFERER);
 	}
 }

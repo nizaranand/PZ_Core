@@ -4,18 +4,19 @@
  *
  * @package Elgg
  * @subpackage Core
+ updatez
  */
 
 elgg_make_sticky_form('useradd');
 
 // Get variables
-$username = get_input('username');
-$password = get_input('password');
-$password2 = get_input('password2');
-$email = get_input('email');
-$name = get_input('name');
+$username = (string) get_input('username');
+$password = (string) get_input('password', null, false);
+$password2 = (string) get_input('password2', null, false);
+$email = (string) get_input('email');
+$name = (string) get_input('name');
 
-$admin = get_input('admin');
+$admin = get_input('admin'); // fix this
 if (is_array($admin)) {
 	$admin = $admin[0];
 }

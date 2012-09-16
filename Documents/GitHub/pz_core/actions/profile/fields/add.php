@@ -2,11 +2,10 @@
 /**
  * Elgg profile plugin edit default profile action
  *
- * @package ElggProfile
  */
 
-$label = get_input('label');
-$type = get_input('type');
+$label = (string) get_input('label');
+$type = (string) get_input('type');
 
 $fieldlist = elgg_get_config('profile_custom_fields');
 if (!$fieldlist) {

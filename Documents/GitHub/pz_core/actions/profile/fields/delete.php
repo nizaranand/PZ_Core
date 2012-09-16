@@ -2,10 +2,9 @@
 /**
  * Elgg profile plugin edit default profile action removal
  *
- * @package ElggProfile
  */
 
-$id = get_input('id');
+$id = (int) get_input('id');
 
 $fieldlist = elgg_get_config('profile_custom_fields');
 if (!$fieldlist) {

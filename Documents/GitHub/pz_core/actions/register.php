@@ -5,17 +5,17 @@
  * @package Elgg.Core
  * @subpackage User.Account
  */
-
+//updatez
 elgg_make_sticky_form('register');
 
 // Get variables
-$username = get_input('username');
-$password = get_input('password');
-$password2 = get_input('password2');
-$email = get_input('email');
-$name = get_input('name');
+$username = (string) get_input('username'); 
+$password = (string) get_input('password', null, false);
+$password2 = (string) get_input('password2', null, false);
+$email = (string) get_input('email');
+$name = (string) get_input('name');
 $friend_guid = (int) get_input('friend_guid', 0);
-$invitecode = get_input('invitecode');
+$invitecode = get_input('invitecode'); // fix this
 
 if (elgg_get_config('allow_registration')) {
 	try {
