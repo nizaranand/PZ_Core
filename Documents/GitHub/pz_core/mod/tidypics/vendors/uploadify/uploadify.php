@@ -7,7 +7,7 @@ Released under the MIT License <http://www.opensource.org/licenses/mit-license.p
 */
 
 // Define a destination
-$targetFolder = '/personal'; // Relative to the root
+// enter your folder for pictures and other data where the '' are. $targetFolder = ''; // Relative to the root
 
 $verifyToken = md5('unique_salt' . $_POST['timestamp']);
 
